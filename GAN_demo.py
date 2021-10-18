@@ -1,7 +1,7 @@
-from re import M, X
 import numpy as np
+from numpy.linalg import norm
 import tensorflow as tf
-from scipy.stats.stats import mode, norm
+from scipy.stats
 from matplotlib import pyplot as plt
 
 
@@ -119,7 +119,7 @@ class GAN(object):
             num_pretrain_steps = 1000
             for step in range(num_pretrain_steps):
                 d = (np.random.random(self.batch_size) - 0.5) * 10.0
-                labels = norm.pdf(d, loc=self.data.mu, scale =self.data.sigma)
+                labels = (d, loc=self.data.mu, scale =self.data.sigma)
                 pretrain_loss,_ =  session.run([self.preloss, self.pre_opt], {
                     self.pre_input: np.reshape(d, (self.batch_size, 1)),
                     self.pre_labels: np.reshape(labels, (self.batch_size, 1))
@@ -191,3 +191,6 @@ def main (arg):
         10, #log_every
     )
     model.train()
+
+if __name__ == "__main__":
+    main()
