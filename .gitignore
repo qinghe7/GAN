@@ -8,7 +8,8 @@ __pycache__/
 
 .vscode
 .idea
-idea/*
+.idea/*
+.tf_test.py
 
 # Distribution / packaging
 .Python
