@@ -94,7 +94,7 @@ class DCGAN():
         model.add(LeakyReLU(alpha=0.2))
         model.add(Dropout(0.25))
         model.add(Conv2D(64, kernel_size=3, strides=2 , padding="same"))
-        model.add(ZeroPadding2D(padding=((0,1)(0,1)))) #就是padding 0 具体如何padding还没看明白 这里还有点问题
+        model.add(ZeroPadding2D(padding=((0,1),(0,1)))) #就是padding 0 查看官方文档
         model.add(BatchNormalization(momentum=0.8))
         model.add(LeakyReLU(alpha=0.2)) # 激活函数LeakyReLU 斜率为0.2
         model.add(Dropout(0.25)) #概率为0.25
@@ -145,4 +145,4 @@ class DCGAN():
 
 if __name__ == "__main__":
     gan = DCGAN()
-    gan.train()
+    gan.train(epochs=10)
