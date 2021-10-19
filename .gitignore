@@ -7,9 +7,9 @@ __pycache__/
 *.so
 
 .vscode
-.idea
+idea
 .idea/*
-.tf_test.py
+tf_test.py
 
 # Distribution / packaging
 .Python
